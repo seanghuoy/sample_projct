@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-md-5
+      =simple_form_for @product do |f|
+        =f.input :name 
+        =f.association :category 
+        =f.input :price
+        = f.label :image, "Attach a New Image" 
+        / .fileinput.fileinput-new data-provides="fileinput"
+          / .fileinput-preview.thumbnail data-trigger="fileinput" style="width: 200px; height: 150px;"
+          / div
+            / .btn-file
+        = f.input :image
+        / a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput" Remove
+        br
+        =f.submit "Ok", class: "btn btn-primary"
+br
+
+javascript:
+    $(document).ready(function(){
+        $('.fileinput').fileinput();
+    });
+      

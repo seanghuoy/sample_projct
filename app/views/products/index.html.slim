@@ -1,0 +1,9 @@
+.container
+  .row
+  h2 
+    =link_to "Add New", new_product_path
+  .row
+    -@products.each do |product|
+      .col-md-4
+        .thumbnail
+          =image_tag(product.image)

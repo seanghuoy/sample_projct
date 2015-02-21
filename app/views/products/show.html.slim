@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-md-3
+      .thumbnail 
+
+        =link_to image_tag @product.image.url(:medium) 
+        p
+          =@product.name
+        p
+          =@product.category
+        p
+          =@product.price  
+  .row 
+    =link_to "edit", edit_product_path
+  .row 
+    = link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Really delete the article?"}

@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-md-5
+      =simple_form_for @product do |f|
+        =f.input :name 
+        =f.association :category
+        =f.input :price
+        = f.label :image, "Attach an Image" 
+        = f.file_field :image 
+        / =f.input :img_url
+        br
+        =f.submit "Ok", class: "btn btn-primary"
+
